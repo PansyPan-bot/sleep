@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1920, initial-scale=1.0">
+    <title>日本好眠美學 | 21天好眠挑戰</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+    <style>
+        /* ... 保留原始字體與基礎樣式 ... */
+        @font-face {
+            font-family: 'NotoSerifCJKsc';
+            src: url('https://assets-persist.lovart.ai/agent-static-assets/NotoSerifCJKsc-Regular.otf') format('opentype');
+            font-weight: normal;
+        }
+        @font-face {
+            font-family: 'MiSans';
+            src: url('https://assets-persist.lovart.ai/agent-static-assets/MiSans-Regular.ttf') format('truetype');
+            font-weight: normal;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { width: 1920px; margin: 0 auto; background-color: #F7F5F0; font-family: 'MiSans', sans-serif; color: #463C33; overflow-x: hidden; }
+        
+        .hero-section { position: relative; width: 100%; height: 900px; display: flex; overflow: hidden; }
+        .hero-text { width: 45%; padding: 0 0 0 160px; display: flex; flex-direction: column; justify-content: center; z-index: 10; }
+        .hero-title { font-size: 100px; line-height: 1.1; margin-bottom: 40px; font-weight: bold; font-family: 'NotoSerifCJKsc', serif; }
+        
+        /* 1. 修改後的電話輸入框與按鈕樣式 */
+        .phone-signup-container {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .phone-input {
+            padding: 20px 30px;
+            border-radius: 100px;
+            border: 1px solid #6E8B74;
+            font-size: 20px;
+            width: 300px;
+            outline: none;
+        }
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px 40px;
+            background-color: #6E8B74;
+            color: white;
+            font-size: 20px;
+            font-weight: 500;
+            border-radius: 100px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+        .cta-btn:hover { transform: translateY(-5px); background-color: #5C7561; }
+
+        /* ... 其他樣式保持不變 ... */
+        .catalog-section { padding: 100px 160px; background-color: #F7F5F0; }
+        .catalog-row { display: grid; grid-template-columns: 1fr 1fr; background: #fff; border-radius: 30px; margin-bottom: 60px; overflow: hidden; }
+        .catalog-img { width: 100%; height: 550px; object-fit: cover; }
+        .catalog-text { padding: 80px; display: flex; flex-direction: column; justify-content: center; }
+        .catalog-title { font-size: 40px; margin-bottom: 20px; font-family: 'NotoSerifCJKsc', serif; }
+        .review-card { border-radius: 20px; overflow: hidden; height: 500px; }
+        .review-img { width: 100%; height: 100%; object-fit: cover; }
+    </style>
+</head>
+<body>
+
+    <div class="hero-section">
+        <div class="hero-text">
+            <span style="display: inline-block; padding: 8px 24px; border: 1px solid #463C33; border-radius: 50px; font-size: 18px; margin-bottom: 30px;">21天睡眠改善计划</span>
+            <h1 class="hero-title">日本<br>好眠美學</h1>
+            <p style="font-size: 24px; line-height: 1.6; margin-bottom: 40px; color: #665D55;">融合傳統日式養生智慧，<br>為您送上專屬的治愈之夜。</p>
+            
+            <div class="phone-signup-container">
+                <input type="text" id="userPhone" class="phone-input" placeholder="Enter your phone number">
+                <button onclick="redirectToWhatsApp('free_sample')" class="cta-btn">
+                    Get Free Sleep Pack
+                    <i class="ri-send-plane-fill" style="margin-left: 10px;"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div style="width: 55%; position: relative;">
+            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80%; height: 85%; background-color: #E6E2D8; border-radius: 400px 400px 0 0; overflow: hidden;">
+                <img src="https://a.lovart.ai/artifacts/agent/xI51WpAAsC88tC3C.png" alt="命の宝 Sleep Product" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+        </div>
+    </div>
+
+    <div class="catalog-section" id="products">
+        <div class="catalog-row">
+            <img src="https://a.lovart.ai/artifacts/agent/xI51WpAAsC88tC3C.png" alt="Sleep Supplement" class="catalog-img">
+            <div class="catalog-text">
+                <div style="font-size: 80px; color: #E6E2D8; font-family: 'NotoSerifCJKsc';">01</div>
+                <h3 class="catalog-title">命の宝: 天然由來成分</h3>
+                <p style="font-size: 20px; color: #777; line-height: 1.8; margin-bottom: 40px;">
+                    萃取日本多種天然植物精華，溫和調理睡眠品質。非藥物依賴，讓身體找回自然睡眠節律。
+                </p>
+                <button onclick="redirectToWhatsApp('buy_product')" class="cta-btn" style="background-color: #463C33; width: fit-content;">
+                    立即購買 HK$118
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 3. 修改後的按鈕連結邏輯 (適用於 SleekFlow Prototype)
+        function redirectToWhatsApp(type) {
+            const phone = "你的WhatsApp號碼"; // 例如: 85290000000
+            let message = "";
+            const userEnteredPhone = document.getElementById('userPhone').value;
+
+            if (type === 'free_sample') {
+                // 場景 1: 領取試用裝
+                message = encodeURIComponent(`我想領取免費助眠貼試用。我的電話是: ${userEnteredPhone}`);
+            } else if (type === 'buy_product') {
+                // 場景 2: 購買產品
+                message = encodeURIComponent("我想購買日本助眠貼，請幫我計算費用。");
+            }
+            
+            window.location.href = `https://wa.me/${phone}?text=${message}`;
+        }
+    </script>
+
+</body>
+</html>
