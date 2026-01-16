@@ -46,6 +46,7 @@
         a {
             text-decoration: none;
             color: inherit;
+            cursor: pointer;
         }
 
         /* Utility Classes */
@@ -116,13 +117,15 @@
             justify-content: center;
             padding: 24px 60px;
             background-color: #6E8B74;
-            color: white;
+            color: white !important;
             font-size: 24px;
             font-weight: 500;
             border-radius: 100px;
             transition: all 0.3s ease;
             box-shadow: 0 10px 30px rgba(110, 139, 116, 0.3);
             width: fit-content;
+            border: none;
+            outline: none;
         }
 
         .cta-btn:hover {
@@ -407,8 +410,8 @@
         <div class="hero-text">
             <span class="hero-tag">21天睡眠改善计划</span>
             <h1 class="hero-title">日本<br>好眠美学</h1>
-            <p class="hero-desc">融合传统日式养生智慧与现代助眠科技，<br>为每一个夜晚注入宁静与治愈。</p>
-            <a href="https://wa.me/你的Wati號碼?text=我想領取免費助眠體驗包，並了解21天挑戰" class="cta-btn">
+            <p class="hero-desc">融合传统日式养生智慧与现代助眠科技，<br>为每一个夜晚注入宁静與治癒。</p>
+            <a onclick="handleFreePackClick()" class="cta-btn">
                 免費領取助眠體驗包
                 <i class="ri-whatsapp-line" style="margin-left: 10px;"></i>
             </a>
@@ -548,12 +551,24 @@
         </div>
         
         <div style="text-align: center; margin-top: 80px;">
-            <a href="https://wa.me/你的Wati號碼?text=我想購買日本好眠方案，請提供訂購資訊" class="cta-btn">
+            <a href="https://wa.me/61035905?text=我想購買日本好眠方案，請提供訂購資訊" class="cta-btn">
                 立即諮詢購買
                 <i class="ri-shopping-bag-line" style="margin-left: 10px;"></i>
             </a>
         </div>
     </div>
+
+    <script>
+        function handleFreePackClick() {
+            var phone = prompt("請輸入您的電話號碼，以便我們安排免費體驗包發送：");
+            if (phone != null && phone !== "") {
+                var message = encodeURIComponent("你好，我想領取免費助眠體驗包！我的電話號碼是：" + phone);
+                window.location.href = "https://wa.me/61035905?text=" + message;
+            } else if (phone === "") {
+                alert("請輸入有效的電話號碼以領取免費體驗包。");
+            }
+        }
+    </script>
 
 </body>
 </html>
