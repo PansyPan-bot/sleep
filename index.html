@@ -11,149 +11,109 @@
             src: url('https://assets-persist.lovart.ai/agent-static-assets/NotoSerifCJKsc-Regular.otf') format('opentype');
             font-weight: normal;
         }
-        @font-face {
-            font-family: 'NotoSerifCJKsc';
-            src: url('https://assets-persist.lovart.ai/agent-static-assets/NotoSerifCJKsc-Bold.otf') format('opentype');
-            font-weight: bold;
-        }
-        @font-face {
-            font-family: 'MiSans';
-            src: url('https://assets-persist.lovart.ai/agent-static-assets/MiSans-Regular.ttf') format('truetype');
-            font-weight: normal;
-        }
-        @font-face {
-            font-family: 'MiSans';
-            src: url('https://assets-persist.lovart.ai/agent-static-assets/MiSans-Medium.ttf') format('truetype');
-            font-weight: 500;
-        }
+        @font-face { font-family: 'MiSans'; src: url('https://assets-persist.lovart.ai/agent-static-assets/MiSans-Regular.ttf') format('truetype'); }
         
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { width: 1920px; margin: 0 auto; background-color: #F7F5F0; font-family: 'MiSans', sans-serif; color: #463C33; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
-        a { text-decoration: none; color: inherit; }
+        body { width: 1920px; margin: 0 auto; background-color: #F7F5F0; font-family: 'MiSans', sans-serif; color: #463C33; overflow-x: hidden; }
 
-        /* Hero Section */
-        .hero-section { position: relative; width: 100%; height: 900px; background-color: #F7F5F0; display: flex; overflow: hidden; }
+        /* Hero */
+        .hero-section { position: relative; width: 100%; height: 900px; display: flex; overflow: hidden; }
         .hero-text { width: 45%; padding: 0 0 0 160px; display: flex; flex-direction: column; justify-content: center; z-index: 10; }
-        .hero-tag { display: inline-block; padding: 8px 24px; border: 1px solid #463C33; border-radius: 50px; font-size: 18px; letter-spacing: 2px; margin-bottom: 30px; width: fit-content; }
-        .hero-title { font-size: 100px; line-height: 1.1; margin-bottom: 40px; font-weight: bold; color: #2C2621; font-family: 'NotoSerifCJKsc', serif; }
-        .hero-desc { font-size: 24px; line-height: 1.6; margin-bottom: 60px; color: #665D55; max-width: 500px; }
+        .hero-title { font-size: 100px; line-height: 1.1; margin-bottom: 40px; font-weight: bold; font-family: 'NotoSerifCJKsc', serif; }
+        .input-group { display: flex; background: white; padding: 8px; border-radius: 100px; border: 1px solid #6E8B74; max-width: 550px; box-shadow: 0 10px 30px rgba(110, 139, 116, 0.1); }
+        .phone-input { flex: 1; border: none; padding: 0 30px; font-size: 20px; border-radius: 100px; outline: none; }
+        .cta-btn { padding: 20px 40px; background-color: #6E8B74; color: white; font-size: 20px; border-radius: 100px; border: none; cursor: pointer; transition: 0.3s; }
 
-        /* Input Group */
-        .input-group { display: flex; background: white; padding: 8px; border-radius: 100px; border: 1px solid #6E8B74; max-width: 550px; margin-top: 10px; box-shadow: 0 10px 30px rgba(110, 139, 116, 0.1); }
-        .phone-input { flex: 1; border: none; padding: 0 30px; font-size: 20px; border-radius: 100px; outline: none; font-family: 'MiSans'; }
-        
-        .cta-btn { display: inline-flex; align-items: center; justify-content: center; padding: 24px 50px; background-color: #6E8B74; color: white; font-size: 22px; font-weight: 500; border-radius: 100px; transition: all 0.3s ease; border: none; cursor: pointer; white-space: nowrap; }
-        .cta-btn:hover { transform: translateY(-3px); background-color: #5C7561; }
+        /* Problem Section */
+        .problem-section { padding: 120px 160px; background-color: #FFFFFF; display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center; }
+        .problem-img { width: 100%; height: 600px; object-fit: cover; border-radius: 20px; }
+        .problem-content h2 { font-size: 56px; margin-bottom: 40px; font-family: 'NotoSerifCJKsc', serif; }
 
-        .hero-image-container { width: 55%; height: 100%; position: relative; display: flex; align-items: center; justify-content: center; }
-        .hero-bg-shape { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80%; height: 85%; background-color: #E6E2D8; border-radius: 400px 400px 0 0; overflow: hidden; }
-        .hero-img { width: 100%; height: 100%; object-fit: cover; }
-        .jp-vertical-text { position: absolute; right: 80px; top: 150px; writing-mode: vertical-rl; font-family: 'NotoSerifCJKsc', serif; font-size: 32px; letter-spacing: 15px; color: #BFA46F; opacity: 0.6; height: 400px; }
+        /* Catalog */
+        .catalog-section { padding: 120px 160px; }
+        .catalog-row { display: grid; grid-template-columns: 1fr 1fr; background: #fff; border-radius: 30px; overflow: hidden; margin-bottom: 60px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); }
+        .catalog-img { width: 100%; height: 500px; object-fit: cover; }
+        .catalog-text { padding: 60px; display: flex; flex-direction: column; justify-content: center; }
 
-        /* Catalog Section */
-        .catalog-section { padding: 100px 160px; background-color: #F7F5F0; }
-        .catalog-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0; background: #fff; border-radius: 30px; margin-bottom: 60px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.03); }
-        .catalog-img { width: 100%; height: 550px; object-fit: cover; }
-        .catalog-text { padding: 80px; display: flex; flex-direction: column; justify-content: center; }
-        .catalog-title { font-size: 40px; margin-bottom: 20px; font-family: 'NotoSerifCJKsc', serif; }
-        
-        /* Social Proof */
-        .social-section { padding: 100px 160px; background-color: #fff; text-align: center; }
-        .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 60px; }
-        .review-card { background: #F9F9F9; border-radius: 20px; overflow: hidden; height: 500px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        /* Services List */
+        .services-list { display: flex; justify-content: space-around; padding: 80px 160px; border-top: 1px solid #EEE; background: #fff; }
+        .service-item { text-align: center; }
+        .service-icon { font-size: 32px; color: #6E8B74; margin-bottom: 10px; }
+
+        /* Customer Reviews (修復 6 宮格) */
+        .social-section { padding: 100px 160px; background: #fff; text-align: center; }
+        .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 50px; }
+        .review-card { height: 450px; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
         .review-img { width: 100%; height: 100%; object-fit: cover; }
     </style>
 </head>
 <body>
 
     <div class="hero-section">
-        <div class="jp-vertical-text">美学のある暮らし</div>
         <div class="hero-text">
-            <span class="hero-tag">21天睡眠改善计划</span>
-            <h1 class="hero-title">日本<br>好眠美学</h1>
-            <p class="hero-desc">領取 21 天挑戰包，開啟您的深度治愈之夜。</p>
-            
+            <span style="border: 1px solid #463C33; padding: 8px 20px; border-radius: 50px; width: fit-content; margin-bottom: 20px;">21天睡眠改善计划</span>
+            <h1 class="hero-title">日本<br>好眠美學</h1>
             <div class="input-group">
-                <input type="tel" id="userPhone" class="phone-input" placeholder="輸入電話號碼領取試用">
-                <button onclick="handleWhatsApp('free_sample')" class="cta-btn">
-                    Get Free Pack <i class="ri-arrow-right-line" style="margin-left: 10px;"></i>
-                </button>
+                <input type="tel" id="userPhone" class="phone-input" placeholder="輸入電話領取試用">
+                <button onclick="handleWhatsApp('free')" class="cta-btn">領取試用</button>
             </div>
         </div>
-        
-        <div class="hero-image-container">
-            <div class="hero-bg-shape">
-                <img src="1768563571605.png" alt="Japanese Room" class="hero-img">
-            </div>
+        <div style="width: 55%; background: #E6E2D8; border-radius: 400px 400px 0 0; margin-top: 50px; overflow: hidden;">
+            <img src="https://a.lovart.ai/artifacts/agent/xI51WpAAsC88tC3C.png" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+    </div>
+
+    <div class="problem-section">
+        <img src="https://a.lovart.ai/artifacts/agent/TvVtXnHTyhD4qsUa.jpg" class="problem-img">
+        <div class="problem-content">
+            <h2>為什麼總是睡不好?</h2>
+            <p style="font-size: 22px; margin-bottom: 20px;"><i class="ri-error-warning-line"></i> 入睡困難，輾轉反側</p>
+            <p style="font-size: 22px; margin-bottom: 20px;"><i class="ri-error-warning-line"></i> 淺眠多夢，容易驚醒</p>
+            <p style="font-size: 22px; margin-bottom: 20px;"><i class="ri-error-warning-line"></i> 晨起乏力，精神不振</p>
         </div>
     </div>
 
     <div class="catalog-section">
         <div class="catalog-row">
-            <img src="sleeppack.jpg" alt="Sleep Patch" class="catalog-img">
+            <img src="https://a.lovart.ai/artifacts/agent/xI51WpAAsC88tC3C.png" class="catalog-img">
             <div class="catalog-text">
-                <h3 class="catalog-title">命の宝：熟眠貼</h3>
-                <p style="font-size: 20px; color: #777; line-height: 1.8; margin-bottom: 40px;">
-                    日本製職人研發，純天然草本配方。貼於湧泉穴，整晚溫和調理，緩解神經緊繃，助您安睡 8 小時。
-                </p>
-                <div style="font-size: 32px; font-weight: bold; margin-bottom: 30px;">HK$ 118.00</div>
-                <button onclick="handleWhatsApp('buy_product')" class="cta-btn" style="background-color: #463C33;">
-                    立即下單購買
-                </button>
+                <h3 style="font-size: 32px; margin-bottom: 20px;">命の宝：熟眠貼</h3>
+                <div style="font-size: 28px; font-weight: bold; margin-bottom: 20px;">HK$ 118.00</div>
+                <button onclick="handleWhatsApp('buy')" class="cta-btn" style="background:#463C33;">立即購買</button>
             </div>
-        </div>
-
-        <div class="catalog-row">
-            <div class="catalog-text">
-                <h3 class="catalog-title">睡眠儀式禮盒</h3>
-                <p style="font-size: 20px; color: #777; line-height: 1.8; margin-bottom: 40px;">
-                    包含特製低咖啡因草本茶、京都薰香與舒壓小物。建立專屬的睡前儀式感。
-                </p>
-                <button onclick="handleWhatsApp('relax_box')" class="cta-btn" style="background-color: #6E8B74;">
-                    了解禮盒詳情
-                </button>
-            </div>
-            <img src="1768563579909.png" alt="Relax Box" class="catalog-img">
         </div>
     </div>
 
+    <div class="services-list">
+        <div class="service-item"><div class="service-icon"><i class="ri-mind-map"></i></div>線上冥想課程</div>
+        <div class="service-item"><div class="service-icon"><i class="ri-group-line"></i></div>21天陪伴社群</div>
+        <div class="service-item"><div class="service-icon"><i class="ri-customer-service-line"></i></div>1對1 顧問</div>
+    </div>
+
     <div class="social-section">
-        <h2 style="font-size: 48px; font-family: 'NotoSerifCJKsc', serif;">學員真實回饋</h2>
+        <h2 style="font-size: 40px; font-family: 'NotoSerifCJKsc', serif;">學員真實回饋</h2>
         <div class="reviews-grid">
-            <div class="review-card"><img src="TvVtXnHTyhD4qsUa.jpg" class="review-img"></div>
-            <div class="review-card"><img src="HehqyIRxW28YJbTp.jpg" class="review-img"></div>
-            <div class="review-card"><img src="TvVtXnHTyhD4qsUa.jpg" class="review-img" style="object-position: bottom;"></div>
+            <div class="review-card"><img src="https://a.lovart.ai/artifacts/agent/TvVtXnHTyhD4qsUa.jpg" class="review-img"></div>
+            <div class="review-card"><img src="https://a.lovart.ai/artifacts/agent/HehqyIRxW28YJbTp.jpg" class="review-img"></div>
+            <div class="review-card"><img src="https://a.lovart.ai/artifacts/agent/TvVtXnHTyhD4qsUa.jpg" class="review-img" style="object-position: bottom;"></div>
+            <div class="review-card"><img src="https://a.lovart.ai/artifacts/agent/HehqyIRxW28YJbTp.jpg" class="review-img"></div>
+            <div class="review-card"><img src="https://a.lovart.ai/artifacts/agent/TvVtXnHTyhD4qsUa.jpg" class="review-img" style="transform: scaleX(-1);"></div>
+            <div class="review-card"><img src="https://a.lovart.ai/artifacts/agent/HehqyIRxW28YJbTp.jpg" class="review-img"></div>
         </div>
-        
-        <div style="margin-top: 80px;">
-            <button onclick="handleWhatsApp('general')" class="cta-btn">
-                加入我們，重拾嬰兒般睡眠
-                <i class="ri-moon-line" style="margin-left: 10px;"></i>
-            </button>
-        </div>
+        <button onclick="handleWhatsApp('join')" class="cta-btn" style="margin-top: 60px;">立即加入 21 天挑戰</button>
     </div>
 
     <script>
         function handleWhatsApp(type) {
-            const myNumber = "85261035905"; // 已更新為您的號碼
-            let message = "";
-            const phoneVal = document.getElementById('userPhone').value;
-
-            if (type === 'free_sample') {
-                if (!phoneVal) {
-                    alert("請先輸入您的電話號碼以便登記。");
-                    return;
-                }
-                message = encodeURIComponent(`我想領取免費試用裝。我的電話是：${phoneVal}`);
-            } else if (type === 'buy_product') {
-                message = encodeURIComponent("我想購買「命の宝」熟眠貼。");
-            } else if (type === 'relax_box') {
-                message = encodeURIComponent("我想了解睡眠儀式禮盒的詳情。");
-            } else {
-                message = encodeURIComponent("我想諮詢 21 天好眠挑戰。");
-            }
-            
-            window.location.href = `https://wa.me/${myNumber}?text=${message}`;
+            const num = "85261035905";
+            let msg = "";
+            const phone = document.getElementById('userPhone').value;
+            if (type === 'free') {
+                if(!phone) { alert("請填寫電話"); return; }
+                msg = `我想領取免費試用。我的電話：${phone}`;
+            } else if (type === 'buy') { msg = "我想購買熟眠貼"; }
+            else { msg = "我想諮詢 21 天挑戰詳情"; }
+            window.location.href = `https://wa.me/${num}?text=${encodeURIComponent(msg)}`;
         }
     </script>
 </body>
